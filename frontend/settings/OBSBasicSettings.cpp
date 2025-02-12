@@ -1852,7 +1852,7 @@ OBSPropertiesView *OBSBasicSettings::CreateEncoderPropertyView(const char *encod
 	OBSPropertiesView *view;
 
 	if (path) {
-		const OBSBasic *basic = reinterpret_cast<OBSBasic *>(App()->GetMainWindow());
+		const OBSBasic *basic = OBSBasic::Get();
 		const OBSProfile &currentProfile = basic->GetCurrentProfile();
 
 		const std::filesystem::path jsonFilePath = currentProfile.path / std::filesystem::u8path(path);
@@ -3233,7 +3233,7 @@ static void WriteJsonData(OBSPropertiesView *view, const char *path)
 	if (!view || !WidgetChanged(view))
 		return;
 
-	const OBSBasic *basic = reinterpret_cast<OBSBasic *>(App()->GetMainWindow());
+	const OBSBasic *basic = OBSBasic::Get();
 	const OBSProfile &currentProfile = basic->GetCurrentProfile();
 
 	const std::filesystem::path jsonFilePath = currentProfile.path / std::filesystem::u8path(path);
@@ -5588,7 +5588,9 @@ void OBSBasicSettings::UpdateMultitrackVideo()
 			ui->enableMultitrackVideo->setChecked(false);
 	}
 
-#ifndef _WIN32
+	// Enhanced Broadcasting works on Windows and Apple Silicon Macs.
+	// For other OS variants, only enable the GUI controls if developer mode was invoked.
+#if !defined(_WIN32) && !(defined(__APPLE__) && defined(__aarch64__))
 	available = available && MultitrackVideoDeveloperModeEnabled();
 #endif
 
