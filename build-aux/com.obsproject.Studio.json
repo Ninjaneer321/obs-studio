@@ -1,7 +1,7 @@
 {
     "id": "com.obsproject.Studio",
     "runtime": "org.freedesktop.Platform",
-    "runtime-version": "24.08",
+    "runtime-version": "25.08",
     "sdk": "org.freedesktop.Sdk",
     "command": "obs",
     "finish-args": [
@@ -30,7 +30,7 @@
         },
         "org.freedesktop.LinuxAudio.Plugins": {
             "directory": "extensions/Plugins",
-            "version": "24.08",
+            "version": "25.08",
             "add-ld-path": "lib",
             "merge-dirs": "vst",
             "subdirectories": true,
@@ -39,7 +39,7 @@
     },
     "modules": [
         {
-            "name": "obs-deps-base",
+            "name": "obs-deps-buildstream-base",
             "buildsystem": "simple",
             "build-commands": [
                 "tar -xvf base.tar.xz -C /"
@@ -48,13 +48,13 @@
                 {
                     "type": "file",
                     "dest-filename": "base.tar.xz",
-                    "url": "https://github.com/obsproject/obs-deps-buildstream/releases/download/2025-10-03/flatpak-base-x86_64-2025-10-03.tar.xz",
-                    "sha256": "5bb40382cf587c0f20f6bead0f93f41ab0ea252a49f3d3ea73e8d554eb44ef6d"
+                    "url": "https://github.com/obsproject/obs-deps-buildstream/releases/download/2026-06-06/flatpak-base-x86_64-2026-06-06.tar.xz",
+                    "sha256": "e0888f1852cf942babf640dd8379842861a46a608f2130833d619899ddf25b04"
                 }
             ]
         },
         {
-            "name": "obs-deps-devel",
+            "name": "obs-deps-buildstream-devel",
             "buildsystem": "simple",
             "build-commands": [
                 "tar -xvf devel.tar.xz -C /"
@@ -63,13 +63,13 @@
                 {
                     "type": "file",
                     "dest-filename": "devel.tar.xz",
-                    "url": "https://github.com/obsproject/obs-deps-buildstream/releases/download/2025-10-03/flatpak-devel-x86_64-2025-10-03.tar.xz",
-                    "sha256": "69dbbb2f0097503b5c4acd9ee5834f44fc6276e9d3b4ab70526f0ef0292a9797"
+                    "url": "https://github.com/obsproject/obs-deps-buildstream/releases/download/2026-06-06/flatpak-devel-x86_64-2026-06-06.tar.xz",
+                    "sha256": "51f9cb6563fc0870a2696ca977c1826f48f2ede6ebaf3486bc4017090fea0d93"
                 }
             ]
         },
         {
-            "name": "obs-deps-devtools",
+            "name": "obs-deps-buildstream-devtools",
             "buildsystem": "simple",
             "build-commands": [
                 "tar -xvf devtools.tar.xz -C /"
@@ -81,13 +81,13 @@
                 {
                     "type": "file",
                     "dest-filename": "devtools.tar.xz",
-                    "url": "https://github.com/obsproject/obs-deps-buildstream/releases/download/2025-10-03/flatpak-devtools-x86_64-2025-10-03.tar.xz",
-                    "sha256": "db1e9b7804c3f9f08b3a4321166abfb53462c9f6e6d6ca5a26eb36b8cfa23df3"
+                    "url": "https://github.com/obsproject/obs-deps-buildstream/releases/download/2026-06-06/flatpak-devtools-x86_64-2026-06-06.tar.xz",
+                    "sha256": "0ba4e5078e63a008a504150ccc1c25bdbed1e5490765606a67af07b0c93c05c2"
                 }
             ]
         },
         {
-            "name": "qt",
+            "name": "obs-deps-buildstream-qt",
             "buildsystem": "simple",
             "build-commands": [
                 "tar -xvf qt.tar.xz -C /"
@@ -96,8 +96,8 @@
                 {
                     "type": "file",
                     "dest-filename": "qt.tar.xz",
-                    "url": "https://github.com/obsproject/obs-deps-buildstream/releases/download/2025-10-03/flatpak-qt-x86_64-2025-10-03.tar.xz",
-                    "sha256": "79d7377da42e1eea2a18ed76407c1db716a80778fe34ef1f68b9eb7ca6d89cbf"
+                    "url": "https://github.com/obsproject/obs-deps-buildstream/releases/download/2026-06-06/flatpak-qt-x86_64-2026-06-06.tar.xz",
+                    "sha256": "2dc37eddc2f252304383c0c2b5d85898593b695e026ebb88892bdc005498ddb6"
                 }
             ]
         },
